@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/* 
 ENV LANG nl_NL.utf8
 
 RUN apt-get update && apt-get install -y apache2 supervisor php5 php5-gd php5-mcrypt mcrypt php5-mysql php5-intl php5-curl ca-certificates
+RUN apt-get clean all
 RUN a2enmod rewrite expires headers 
 RUN php5enmod mcrypt
 RUN mkdir -p /var/lock/apache2 /var/run/apache2 /var/log/supervisor          
